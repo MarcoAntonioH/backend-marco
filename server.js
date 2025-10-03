@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 
 server.listen(DB_PORT, () => {
   console.log(`Server is running on port ${DB_PORT}`);
-  sequelize.sync({force: true }) // cambiar de alter a force para que se borren las tablas y se creen de nuevo, hasta que queden bien diseñadas
+  sequelize.sync({alter: true }) // cambiar de alter a force para que se borren las tablas y se creen de nuevo, hasta que queden bien diseñadas
     .then(() => console.log("Database is connected"))
     .catch(err => console.error("Error connecting to the database:", err));
 });
